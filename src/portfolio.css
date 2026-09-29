@@ -185,6 +185,21 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
 .education-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 11px 24px; margin: 0; padding: 0; list-style: none; }
 .education-list li { display: flex; gap: 10px; align-items: flex-start; color: var(--muted); font-size: 12px; line-height: 1.65; }
 .education-list svg { width: 15px; height: 15px; flex: 0 0 auto; margin-top: 2px; color: var(--accent); }
+.training-card { position: relative; overflow: hidden; border: 1px solid rgba(185, 164, 255, 0.23); border-radius: 7px; padding: 28px 30px; background: linear-gradient(115deg, rgba(152, 128, 211, 0.11), rgba(109, 151, 197, 0.06) 56%, var(--surface) 100%); transition: border-color 180ms ease, transform 180ms ease; }
+.training-card:hover { transform: translateY(-3px); border-color: rgba(185, 164, 255, 0.48); }
+.training-topline { display: flex; align-items: center; justify-content: space-between; gap: 16px; }
+.training-status { display: inline-flex; align-items: center; gap: 8px; color: var(--green); font-family: var(--mono); font-size: 10px; text-transform: uppercase; }
+.training-status span { width: 6px; height: 6px; border-radius: 50%; background: currentColor; box-shadow: 0 0 0 4px color-mix(in srgb, currentColor 14%, transparent); }
+.training-period { color: var(--muted); font-family: var(--mono); font-size: 11px; }
+.training-card h3 { margin: 21px 0 7px; font-size: clamp(20px, 2.5vw, 25px); font-weight: 600; line-height: 1.35; }
+.training-provider { margin: 0; color: var(--accent); font-size: 13px; font-weight: 600; }
+.training-description { max-width: 790px; margin: 17px 0 0; color: var(--muted); font-size: 13px; line-height: 1.85; }
+.certifications-block { margin-top: 36px; }
+.certifications-title { margin: 0 0 16px; color: var(--text); font-size: 14px; font-weight: 600; }
+.certification-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 10px; margin: 0; padding: 0; list-style: none; }
+.certification-card { display: flex; min-height: 62px; align-items: center; gap: 10px; border: 1px solid var(--line); border-radius: 5px; padding: 12px 14px; background: var(--surface); color: var(--muted); font-size: 11px; line-height: 1.55; transition: transform 180ms ease, border-color 180ms ease, color 180ms ease; }
+.certification-card:hover { transform: translateY(-2px); border-color: rgba(185, 164, 255, 0.35); color: var(--text); }
+.certification-card svg { width: 15px; height: 15px; flex: 0 0 auto; color: var(--accent); }
 
 .ai-panel { position: relative; overflow: hidden; border: 1px solid var(--line); border-radius: 7px; padding: 35px; background: linear-gradient(115deg, rgba(152, 128, 211, 0.11), rgba(109, 151, 197, 0.07) 60%, transparent); }
 .ai-panel::after { position: absolute; top: -70px; right: -50px; width: 230px; height: 230px; border: 1px solid rgba(185, 164, 255, 0.17); border-radius: 50%; box-shadow: 0 0 0 25px rgba(185, 164, 255, 0.025), 0 0 0 52px rgba(185, 164, 255, 0.02); content: ''; pointer-events: none; }
@@ -232,6 +247,7 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .architecture { width: 100%; max-width: 510px; justify-self: center; }
   .about-layout, .experience-layout { grid-template-columns: 1fr; gap: 27px; }
   .experience-layout .section-heading { position: static; }
+  .certification-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .skills-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .contact-panel { grid-template-columns: 1fr; align-items: start; }
   .nav-links { position: absolute; top: calc(100% + 1px); right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; gap: 0; border-bottom: 1px solid var(--line); padding: 8px 20px 13px; background: var(--bg); }
@@ -262,6 +278,9 @@ button:focus-visible, a:focus-visible { outline: 2px solid var(--accent); outlin
   .fact strong { font-size: 12px; }
   .fact span { font-size: 9px; }
   .skills-grid, .projects-grid, .education-list { grid-template-columns: 1fr; }
+  .certification-grid { grid-template-columns: 1fr; }
+  .training-card { padding: 22px 20px; }
+  .training-topline { align-items: flex-start; flex-direction: column; gap: 9px; }
   .project-card.featured { display: flex; }
   .project-card.featured .project-features { align-content: initial; }
   .skill-group { min-height: 0; }
